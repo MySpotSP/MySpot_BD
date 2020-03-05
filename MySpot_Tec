@@ -1,0 +1,46 @@
+Create database Estacionamento;
+
+create table Sensor (
+    ID_sensor int primary key,
+	Vaga boolean,
+    Rua varchar (40),
+    Bairro varchar (20),
+    CEP varchar (20),
+    Localizador_GPS varchar (100)
+);
+
+insert into Sensor values (
+    1, false, 'Rua Haddock Lobo', 'Cerqueira César', '01414-001', '-23.558010, -46.661676');
+
+-- Quando 'Vaga' Mudar de True para False ou vice-versa, a data e hora da mudança são inseridos em 'dados_sensor'--
+
+select * from sensor;
+
+Create table dados_sensor (
+    Identificador int (5),
+    Dia date,
+    Horário time (1)	
+);
+
+insert into dados_sensor values (
+    1, 20200227, 143945);
+
+select * from dados_sensor;
+
+create table Clientes (
+    Nome_Cliente char (30),
+    Data_nascimento date,
+    CPF char (20) primary key,
+    CNH char (12),
+    Email varchar (40),
+    Telefone char (20),
+    Deficiência boolean,
+    Tipo_deficiência char (30)
+    );
+
+ -- Se 'Deficiência' for verdadeira, o aplicativo exibe os sensores para deficientes--    
+ 
+ insert into Clientes values (
+     'Guilherme Alves Ferreira', 20010702, 45187602802, 1234567890, 'guilherme99908@gmail.com', 11941448998, false, null);
+     
+select * from Clientes;
